@@ -5,8 +5,8 @@ const Base = require('eris-sharder').Base
 const { CommandHandler, EventHandler } = require('./modules')
 
 class Bot extends Base {
-  constructor() {
-    super()
+  constructor(base) {
+    super(base)
     // Load commands
     this.client.commandHandler = new CommandHandler(this)
     // Event Handler
