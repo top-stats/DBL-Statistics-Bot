@@ -9,6 +9,10 @@ class Embed {
     this.color = null
     this.url = ''
     this.fields = []
+    this.image = {
+      url: '',
+      proxy_url: ''
+    },
     this.author = {
       name: '',
       url: '',
@@ -20,6 +24,20 @@ class Embed {
       icon_url: '',
       proxy_icon_url: ''
     }
+  }
+
+  /**
+   * @param {String} url The url of the image you want to set
+   * @param {String} proxy_url The proxy url of the image you want to set
+   * @param {Number} width Width of the image
+   * @param {Number} height Height of the image
+   */
+  setImage (url, proxy_url, width, height ) {
+    this.image.url = url
+    this.image.proxy_url = proxy_url
+    this.image.width = proxy_url
+    this.image.height = proxy_url
+    return this
   }
 
   /**
