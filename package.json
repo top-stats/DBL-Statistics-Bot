@@ -19,6 +19,7 @@
   "dependencies": {
     "eris-sharder": "git+https://github.com/Luke-6723/eris-sharder.git",
     "fs": "0.0.1-security",
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "node-fetch": "^2.6.1"
   }
 }
