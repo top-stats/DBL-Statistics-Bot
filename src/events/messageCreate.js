@@ -1,6 +1,6 @@
 const Event = require('../structures/Event.js')
 
-const { defaultPrefix, ownerOnly, owners } = require('../../config/clientOptions.json')
+const { prefix: botPrefix, ownerOnly, owners } = require('../../config.json')
 
 class MessageCreate extends Event {
   get name () {
@@ -15,12 +15,12 @@ class MessageCreate extends Event {
     try {
       if (msg.author.bot) return
       if (ownerOnly && !owners.includes(msg.author.id)) return
-      const prefix = msg.content.toLowerCase().substr(0, defaultPrefix.length)
+      const prefix = msg.content.toLowerCase().substr(0, botPrefix.length)
       const args = msg.content
-        .substr(defaultPrefix.length)
+        .substr(prefix.length)
         .replace(/[ ]+/g, ' ').split(' ')
       const commandGiven = args.splice(0, 1)[0]?.toLowerCase()
-      if (prefix === defaultPrefix) {
+      if (botPrefix === prefix) {
         const command = this.client.commands.get(commandGiven)
         // This is temporary
         if (!command) return
