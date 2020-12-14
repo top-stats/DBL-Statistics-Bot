@@ -1,5 +1,5 @@
 const EventEmitter = require('events')
-const config = require('../../config/clientOptions.json')
+const config = require('../../config.json')
 
 const Error = {
   missingName: new TypeError('Classes extending "Event" must have a getter "name"'),
