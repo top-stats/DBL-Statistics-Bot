@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dbl-marcorennmaus-de/DBL-Statistics-Bot/issues"
   },
-  "homepage": "https://github.com/dbl-marcorennmaus-de/DBL-Statistics-Bot#readme"
+  "homepage": "https://github.com/dbl-marcorennmaus-de/DBL-Statistics-Bot#readme",
+  "dependencies": {
+    "eris-sharder": "git+https://github.com/Luke-6723/eris-sharder.git"
+  }
 }
