@@ -1,4 +1,4 @@
-const Event = require('../structures/Event.js.js')
+const Event = require('../structures/Event.js')
 
 const { defaultPrefix, ownerOnly, owners } = require('../../config/clientOptions.json')
 
