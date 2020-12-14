@@ -1,0 +1,19 @@
+{
+  "name": "dbl-statistics-bot",
+  "version": "0.0.1",
+  "description": "DBL Statistics Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dbl-marcorennmaus-de/DBL-Statistics-Bot.git"
+  },
+  "author": "Luke-6723, Xignotic84, marcorennmaus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dbl-marcorennmaus-de/DBL-Statistics-Bot/issues"
+  },
+  "homepage": "https://github.com/dbl-marcorennmaus-de/DBL-Statistics-Bot#readme"
+}
