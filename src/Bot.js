@@ -8,6 +8,8 @@ const Util = require('./Util')
 class Bot extends Base {
   constructor(base) {
     super(base)
+    // Set bot embed color
+    this.client.color = 7506394
     // Load Util
     this.client.Util = Util
     // Load commands
