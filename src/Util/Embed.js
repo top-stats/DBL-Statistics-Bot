@@ -35,8 +35,8 @@ class Embed {
   setImage (url, proxy_url, width, height ) {
     this.image.url = url
     this.image.proxy_url = proxy_url
-    this.image.width = proxy_url
-    this.image.height = proxy_url
+    this.image.width = width
+    this.image.height = height
     return this
   }
 
