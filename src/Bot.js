@@ -1,9 +1,11 @@
 // Set max listeners to stop it throwing a "possible memory leak" warning
 process.setMaxListeners(250)
 // Dependencies
+const DBLStatistics = require('dblstatistics.js')
 const Base = require('eris-sharder').Base
 const { CommandHandler, EventHandler } = require('./modules')
 const Util = require('./Util')
+const config = require('../config.json')
 
 class Bot extends Base {
   constructor(base) {
@@ -16,6 +18,8 @@ class Bot extends Base {
     this.client.commandHandler = new CommandHandler(this)
     // Event Handler
     this.client.eventHandler = new EventHandler(this)
+    // Setup DBL Stats API handler
+    this.client.dblstats = new DBLStatistics(config.tokens.DBLStatistics)
   }
 
   launch() {
