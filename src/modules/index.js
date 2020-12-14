@@ -1,4 +1,4 @@
 module.exports = {
-  commandHandler: require('./commandHandler'),
-  eventHandler: require('./EventHandler')
+  CommandHandler: require('./commandHandler'),
+  EventHandler: require('./EventHandler')
 }
