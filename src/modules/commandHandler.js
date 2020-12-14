@@ -89,6 +89,7 @@ class CommandHandler extends Base {
         if (command.aliases) {
           command.aliases.forEach(alias => this.client.commands.set(alias.toLowerCase(), command))
         }
+        console.log(`Loaded [ ${command.name} ] with ${command.aliases.length} alias(s)`)
       }
       outFiles = files
     })
