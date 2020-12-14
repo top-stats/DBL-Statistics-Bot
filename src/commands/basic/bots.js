@@ -1,6 +1,6 @@
 const Command = require('../../structures/Command')
 
-class DiscordStats extends Command {
+class BotsInfo extends Command {
 
   get name () {
     return 'bots'
@@ -56,4 +56,4 @@ Shards: ${b.shard_count} (#${b.shard_count_rank})
   }
 }
 
-module.exports = DiscordStats
+module.exports = BotsInfo

@@ -1,6 +1,6 @@
 const Command = require('../../structures/Command')
 
-class DiscordStats extends Command {
+class Graph extends Command {
 
   get name () {
     return 'graph'
@@ -64,4 +64,4 @@ class DiscordStats extends Command {
   }
 }
 
-module.exports = DiscordStats
+module.exports = Graph
