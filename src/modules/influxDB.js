@@ -13,7 +13,10 @@ class InfluxDBPoster {
           fields: {
             guilds: Influx.FieldType.INTEGER,
             users: Influx.FieldType.INTEGER,
-            totalRam: Influx.FieldType.INTEGER
+            totalRam: Influx.FieldType.INTEGER,
+            clustersUp: Influx.FieldType.INTEGER,
+            shardsUp: Influx.FieldType.INTEGER,
+            latency: Influx.FieldType.INTEGER
           },
           tags: [
             'host'
