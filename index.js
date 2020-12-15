@@ -2,10 +2,13 @@ require('eris-sharder/src/sharding/clustermanager').prototype.printLogo = (...ar
 const InfluxDBHandler = require('./src/modules/influxDB')
 const InfluxDB = new InfluxDBHandler()
 const Sharder = require('eris-sharder').Master
+const {isMaster} = require('cluster')
+const TopGG = require('@top-gg/sdk')
 const {
-  tokens: { BOT },
+  tokens: { BOT, TOPGG },
   client: { clusterCount, shardCount }
 } = require('./config')
+const TopGGClient = new TopGG.Api(TOPGG)
 
 const sharder = new Sharder(BOT, '/src/Bot.js', {
 
@@ -40,6 +43,21 @@ const sharder = new Sharder(BOT, '/src/Bot.js', {
     }
   }
 })
+
+
+
+setInterval(async () => {
+  if(isMaster) {
+    const { stats } = sharder.stats
+    const shardsUp = stats.clusters.map(c => c.shardsStats.filter(ss => ss.status === 'ready').length).reduce((a,b) => a + b, 0)
+    if(stats.clusters.length === clusterCount && shardsUp === shardCount) {
+      await TopGGClient.postStats({
+        serverCount: stats.guilds,
+        shardCount: shardCount
+      })
+    }
+  }
+}, 600000)
 
 // Will use this for when posting to influx
 sharder.on('stats', stats => {

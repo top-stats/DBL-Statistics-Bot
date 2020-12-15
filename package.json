@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dbl-marcorennmaus-de/DBL-Statistics-Bot#readme",
   "dependencies": {
+    "@top-gg/sdk": "^3.0.3",
     "dblstatistics.js": "^2.0.1",
     "eris-sharder": "git+https://github.com/Luke-6723/eris-sharder.git",
     "fs": "0.0.1-security",
