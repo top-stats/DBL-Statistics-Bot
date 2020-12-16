@@ -56,7 +56,7 @@ class Bot extends Base {
 
       if (!(role && id)) return res.status(400).json({ code: 400, message: 'No role or id provided with params' });
 
-      const guild = this.client.guilds.get(process.env.DBL_GUILDID);
+      const guild = this.client.guilds.get('264445053596991498');
 
       if (!guild) return res.status(404).json({ code: 404, message: 'Guild not found' });
 
@@ -64,7 +64,7 @@ class Bot extends Base {
 
       if (!foundRole) return res.status(404).json({ code: 404, message: 'Role not found' });
 
-      const foundMember = guild.members.get(id) || (await guild.fetchMembers({ userIDs: [ id ] }))[0]
+      const foundMember = guild.members.get(id) || (await guild.fetchMembers({ userIDs: [ id ] }))
 
       if (!foundMember) return res.status(404).json({ code: 404, message: 'Member not found' });
 
