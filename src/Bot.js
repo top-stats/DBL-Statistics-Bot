@@ -68,7 +68,7 @@ class Bot extends Base {
 
       if (!foundMember) return res.status(404).json({ code: 404, message: 'Member not found' });
 
-      const hasRole = foundMember.roles.get(foundRole.id);
+      const hasRole = foundMember.roles.includes(foundRole.id);
 
       if (hasRole) return res.status(200).json({ has_access: true });
       else res.status(401).json({ has_access: false });
