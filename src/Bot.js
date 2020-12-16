@@ -56,7 +56,7 @@ class Bot extends Base {
 
       if (!(role && id)) return res.status(400).json({ code: 400, message: 'No role or id provided with params' });
 
-      const guild = client.guilds.get(process.env.DBL_GUILDID);
+      const guild = this.client.guilds.get(process.env.DBL_GUILDID);
 
       if (!guild) return res.status(404).json({ code: 404, message: 'Guild not found' });
 
