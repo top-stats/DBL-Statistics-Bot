@@ -20,6 +20,7 @@
     "@top-gg/sdk": "^3.0.3",
     "dblstatistics.js": "^2.0.1",
     "eris-sharder": "git+https://github.com/Luke-6723/eris-sharder.git",
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
     "glob": "^7.1.6",
     "influx": "^5.6.3",
