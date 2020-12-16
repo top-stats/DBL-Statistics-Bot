@@ -64,7 +64,8 @@ class Bot extends Base {
 
       if (!foundRole) return res.status(404).json({ code: 404, message: 'Role not found' });
 
-      const foundMember = guild.members.get(id) || (await guild.fetchMembers({ userIDs: [ id ] }))
+      const foundMember = guild.members.get(id) || (await guild.fetchMembers({ userIDs: [ id ] }))[0]
+      if(!guild.members.get(id))
 
       if (!foundMember) return res.status(404).json({ code: 404, message: 'Member not found' });
 
