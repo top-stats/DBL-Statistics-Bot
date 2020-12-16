@@ -26,7 +26,7 @@ class Bot extends Base {
 
     const app = express();
 
-    app.listen(config.env.PORT, config.HOST, () => {
+    app.listen(config.PORT, config.HOST, () => {
       console.log(`Listening on ${config.HOST}:${config.PORT}`);
     });
 
