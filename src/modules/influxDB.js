@@ -56,7 +56,7 @@ class InfluxDBPoster {
       measurement: type,
       tags: { host: host },
       fields: data
-    }])
+    }]).then(() => console.log('Posted')).catch(console.log)
   }
 }
 

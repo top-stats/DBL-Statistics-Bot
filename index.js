@@ -67,7 +67,7 @@ sharder.on('stats', stats => {
     guilds: stats.guilds,
     users: stats.users,
     totalRam: stats.totalRam,
-    clustersUp: stats.clusters.length,
+    clustersUp: parseInt(stats.clusters.length),
     latency: isNaN(shardsAvgLatency) ? 0 : shardsAvgLatency,
     // Get all shards and add the number together
     shardsUp: shardsUp
