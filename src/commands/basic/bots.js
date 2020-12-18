@@ -15,10 +15,8 @@ class BotsInfo extends Command {
   }
 
   async run (msg, args) {
-    const userID = args?.[0]?.replace(/[<@!>]/g, "")
-    if(!userID) return this.client.createMessage(msg.channel.id, {
-      embed: new this.client.Util.Embed().setTitle('Please give a user id').setColor(this.client.color)
-    })
+    let userID = args?.[0]?.replace(/[<@!>]/g, "")
+    if(!userID) userID = msg.author.id
     let user
     // try eris's cache
     user = await this.client.users.get(userID)
