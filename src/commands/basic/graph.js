@@ -38,7 +38,7 @@ class Graph extends Command {
     // try eris's cache
     bot = await this.client.users.get(botID)
     // Fetch from discord
-    if(!bot) bot = await this.client.fetchUser(bot).catch(_ => {})
+    if(!bot) bot = await this.client.fetchUser(botID).catch(_ => {})
     // 404 User Error
     if(!bot) return this.client.createMessage(msg.channel.id, {
       embed: new this.client.Util.Embed().setTitle('Bot not found').setColor(this.client.color)
