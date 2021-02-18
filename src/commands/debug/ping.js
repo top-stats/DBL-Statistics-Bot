@@ -1,6 +1,5 @@
 const Command = require('../../structures/Command')
 const fetch = require('node-fetch')
-const { client: { shardCount } } = require('../../../config')
 
 class Ping extends Command {
   get name () {
@@ -41,8 +40,7 @@ class Ping extends Command {
       const end = Date.now()
       embed.description = `API Latency: \`${apiFin - apiStart}ms\`
       Message Roundtrip: \`${end - now}ms\`
-      Websocket: \`${this.client.shards.values().next().value.latency}ms\`
-      Shard ID: \`${(msg.channel.guild.id >> 22) % shardCount}\``
+      Websocket: \`${this.client.shards.values().next().value.latency}ms\``
       pingMsg.edit({ embed })
     })
   }
