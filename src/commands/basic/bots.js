@@ -44,10 +44,10 @@ class BotsInfo extends Command {
     // Build bot Listing
     bots.forEach(b => {
       embed.addField(b.name, `[View Here](https://dblstats.com/bot/${b.id})
-Monthly Votes: ${b.monthly_votes} (#${b.monthly_votes_rank})
-Total Votes: ${b.total_votes} (#${b.total_votes_rank})
-Servers: ${b.server_count} (#${b.server_count_rank})
-Shards: ${b.shard_count} (#${b.shard_count_rank})
+Monthly Votes: ${b.monthly_votes} (#${b.monthly_votes_rank.toLocaleString()})
+Total Votes: ${b.total_votes} (#${b.total_votes_rank.toLocaleString()})
+Servers: ${b.server_count} (#${b.server_count_rank.toLocaleString()})
+Shards: ${b.shard_count} (#${b.shard_count_rank.toLocaleString()})
 `)
     })
     return this.client.createMessage(msg.channel.id, { embed: embed })
