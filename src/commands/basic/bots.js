@@ -32,7 +32,7 @@ class BotsInfo extends Command {
     // No bots for this user error
     if(!bots) return this.client.createMessage(msg.channel.id, {
       embed: new this.client.Util.Embed().setTitle('User has no bots.')
-        .setDescription('If you you recently added your bot\nwait until the next hour hits.').setColor(this.client.color)
+        .setDescription('If you recently added your bot\nwait until the next hour hits.').setColor(this.client.color)
     })
     // Build initial embed
     const embed = new this.client.Util.Embed()
@@ -44,10 +44,10 @@ class BotsInfo extends Command {
     // Build bot Listing
     bots.forEach(b => {
       embed.addField(b.name, `[View Here](https://dblstats.com/bot/${b.id})
-Monthly Votes: ${b.monthly_votes} (#${b.monthly_votes_rank.toLocaleString()})
-Total Votes: ${b.total_votes} (#${b.total_votes_rank.toLocaleString()})
-Servers: ${b.server_count} (#${b.server_count_rank.toLocaleString()})
-Shards: ${b.shard_count} (#${b.shard_count_rank.toLocaleString()})
+Monthly Votes: ${b.monthly_votes.toLocaleString()} (#${b.monthly_votes_rank.toLocaleString()})
+Total Votes: ${b.total_votes.toLocaleString()} (#${b.total_votes_rank.toLocaleString()})
+Servers: ${b.server_count.toLocaleString()} (#${b.server_count_rank.toLocaleString()})
+Shards: ${b.shard_count.toLocaleString()} (#${b.shard_count_rank.toLocaleString()})
 `)
     })
     return this.client.createMessage(msg.channel.id, { embed: embed })
