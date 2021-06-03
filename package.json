@@ -19,7 +19,7 @@
   "dependencies": {
     "@top-gg/sdk": "^3.0.3",
     "dblstatistics.js": "^2.0.1",
-    "eris-sharder": "git+https://github.com/Luke-6723/eris-sharder.git",
+    "eris-sharder": "git+https://github.com/Luke-6723/eris-sharder.git#e007e465f8c8c4968f3bec53b65e3c139e3fe6ce",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "glob": "^7.1.6",
