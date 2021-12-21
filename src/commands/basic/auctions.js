@@ -19,7 +19,7 @@ class Auctions extends Command {
     if (nextMonday.getDay() !== 1) {
       nextMonday.setDate(nextMonday.getDate() + (((8 - nextMonday.getDay()) % 7) || 7))
     }
-    nextMonday.setHours(19)
+    nextMonday.setHours(20)
     nextMonday.setMinutes(0)
 
     // checks if today isnt tuesday
@@ -27,7 +27,7 @@ class Auctions extends Command {
     if (nextTuesday.getDay() !== 2) {
       nextTuesday.setDate(nextTuesday.getDate() + (((9 - nextTuesday.getDay()) % 7) || 7))
     }
-    nextTuesday.setHours(19)
+    nextTuesday.setHours(20)
     nextTuesday.setMinutes(0)
 
     msg.channel.createMessage({
