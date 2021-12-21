@@ -35,13 +35,17 @@ Example: \`${config.prefix}top servers\``)
         `Get a user's bots 
 Example: \`${config.prefix}bots 116930717241311236\``)
       .addField(
+  `${config.prefix}auctions`,
+  `Get Top.gg's auctions support article and timings. 
+Example: \`${config.prefix}auctions`)
+      .addField(
         `${config.prefix}graph [mention / id] [category]`,
         `Gives a graph of the bots specific count over time.
 Example: \`${config.prefix}graph 583807014896140293 servers\``)
       .setColor(this.client.color)
 
       .setFooter('© DBL Statistics | https://dblstats.com', this.client.user.avatarURL, '')
-    return this.client.createMessage(msg.channel.id, {embed: embed})
+    return this.client.createMessage(msg.channel.id, { embed: embed })
   }
 }
 

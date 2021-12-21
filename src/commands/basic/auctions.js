@@ -34,7 +34,7 @@ class Auctions extends Command {
       embed: {
         color: this.client.color,
         description: `**Auctions information**
-You can find out more about top.gg auctions on the [Auctions Support Article](https://support.top.gg/support/solutions/articles/73000508264-how-do-i-use-auctions-)
+You can find out more about Top.gg auctions on the [Auctions Support Article](https://support.top.gg/support/solutions/articles/73000508264-how-do-i-use-auctions-)
 
 **Auctions Timing Update**
 **Next Starts**: <t:${Math.floor(nextTuesday.getTime() / 1000)}:f> (<t:${Math.floor(nextTuesday.getTime() / 1000)}:R>)
