@@ -37,7 +37,7 @@ Example: \`${config.prefix}bots 116930717241311236\``)
       .addField(
   `${config.prefix}auctions`,
   `Get Top.gg's auctions support article and timings. 
-Example: \`${config.prefix}auctions`)
+Example: \`${config.prefix}auctions\``)
       .addField(
         `${config.prefix}graph [mention / id] [category]`,
         `Gives a graph of the bots specific count over time.
