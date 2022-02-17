@@ -1,1 +1,0 @@
-## Mongo Database Schemas / Models
