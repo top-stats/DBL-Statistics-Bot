@@ -5,6 +5,7 @@ var router = express.Router();
 
 // Commands
 const helpInteraction = require("./interactions/help.js");
+const auctionsInteraction = require("./interactions/auctions.js");
 
 /* Interactions counter */
 router.post('/', verifyKeyMiddleware(process.env.DISCORD_PUBLIC_KEY), function(req, res, next) {
@@ -28,6 +29,9 @@ router.post('/', verifyKeyMiddleware(process.env.DISCORD_PUBLIC_KEY), function(r
   switch (req.body.data.name) {
     case "help":
       helpInteraction(req.body);
+      break;
+    case "auctions":
+      auctionsInteraction(req.body);
       break;
     default:
       break;

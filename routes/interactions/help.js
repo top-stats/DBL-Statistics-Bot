@@ -49,5 +49,5 @@ module.exports = function runCommand(body){
             'Content-Type': 'application/json'
         }
     })
-    .then(response => console.log(response.json()))
+    .then(response => console.log("Request handled."));
 }
