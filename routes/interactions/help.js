@@ -34,7 +34,7 @@ module.exports = function runCommand(body){
             },
             {
                 "name": "/graph [mention/id] [category]",
-                "value": "Gives a graph of the bots specific counts over time.\nExample: `dbl-graph 583807014896140293 servers`"
+                "value": "Gives a graph of the bots specific counts over time.\nExample: `/graph 583807014896140293 servers`"
             }
             ]
         }],
