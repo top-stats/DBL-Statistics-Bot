@@ -14,7 +14,7 @@ module.exports = async function runCommand(body){
         case "server_count":
             sorting = "servers";
             sortingName = "Server Count";
-            field = "none"
+            field = "server_count"
             break;
         case "shard_count":
             sorting = "shards";
