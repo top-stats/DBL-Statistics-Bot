@@ -4,7 +4,8 @@
   "description": "DBL Statistics Bot",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "start": "node bin/www"
   },
   "repository": {
     "type": "git",
