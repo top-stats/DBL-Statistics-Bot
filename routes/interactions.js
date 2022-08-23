@@ -7,6 +7,7 @@ var router = express.Router();
 const helpInteraction = require("./interactions/help.js");
 const auctionsInteraction = require("./interactions/auctions.js");
 const botinfoInteraction = require("./interactions/botinfo.js");
+const topInteraction = require("./interactions/top.js");
 
 /* Interactions counter */
 router.post('/', verifyKeyMiddleware(process.env.DISCORD_PUBLIC_KEY), function(req, res, next) {
@@ -36,6 +37,9 @@ router.post('/', verifyKeyMiddleware(process.env.DISCORD_PUBLIC_KEY), function(r
       break;
     case "botinfo":
       botinfoInteraction(req.body);
+      break;
+    case "top":
+      topInteraction(req.body);
       break;
     default:
       break;
