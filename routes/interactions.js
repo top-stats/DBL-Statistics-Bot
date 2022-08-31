@@ -6,8 +6,10 @@ var router = express.Router();
 // Commands
 const helpInteraction = require("./interactions/help.js");
 const auctionsInteraction = require("./interactions/auctions.js");
-const botinfoInteraction = require("./interactions/botinfo.js");
+const botinfoInteraction = require("./interactions/botInfo.js");
 const topInteraction = require("./interactions/top.js");
+const botsInteraction = require("./interactions/bots.js");
+const graphInteraction = require("./interactions/graph.js");
 
 /* Interactions counter */
 router.post('/', verifyKeyMiddleware(process.env.DISCORD_PUBLIC_KEY), function(req, res, next) {
@@ -38,8 +40,14 @@ router.post('/', verifyKeyMiddleware(process.env.DISCORD_PUBLIC_KEY), function(r
     case "botinfo":
       botinfoInteraction(req.body);
       break;
+    case "bots":
+      botsInteraction(req.body);
+      break;
     case "top":
       topInteraction(req.body);
+      break;
+    case "graph":
+      graphInteraction(req.body);
       break;
     default:
       break;
