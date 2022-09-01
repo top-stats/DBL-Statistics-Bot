@@ -6,7 +6,7 @@ var router = express.Router();
 // Commands
 const helpInteraction = require("./interactions/help.js");
 const auctionsInteraction = require("./interactions/auctions.js");
-const botinfoInteraction = require("./interactions/botInfo.js");
+const botinfoInteraction = require("./interactions/botinfo.js");
 const topInteraction = require("./interactions/top.js");
 const botsInteraction = require("./interactions/bots.js");
 const graphInteraction = require("./interactions/graph.js");
