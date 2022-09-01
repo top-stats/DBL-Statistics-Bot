@@ -21,7 +21,7 @@ module.exports = async function runCommand(body){
         }
     }
 
-    const bot = await DBLStatsClient.getBot(body.data.options[0].value).catch(_ => {});
+    const data = await DBLStatsClient.getUsersBots(body.data.options[0].value).catch(_ => {});
 
     var fields = [];
 
