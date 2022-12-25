@@ -6,8 +6,6 @@ module.exports = async function runCommand(body){
 
     var reply = {};
 
-    console.log(body.data)
-
     const data = body.data.options 
         ? await DBLStatsClient.getUsersBots(body.data.options[0].value).catch(_ => {}) 
         : await DBLStatsClient.getUsersBots(body.member.user.id).catch(_ => {});
@@ -25,21 +23,38 @@ module.exports = async function runCommand(body){
         }
     });
 
-    reply = {
-        "type": 4,
-        "data": {
-        "tts": false,
-        "content": "",
-        "embeds": [{
-            "title": `${body.member.user.username}#${body.member.user.discriminator}'s bots`,
-            "color": 5793266,
-            "fields": fields
-        }],
-        "allowed_mentions": { "parse": [] }
+    if(data.bots.length < 1) {
+        const title = body.data.options
+            ? 'You have no bots.'
+            : 'No bots found for that user.'
+
+        reply = {
+            "type": 4,
+            "data": {
+            "tts": false,
+            "content": "",
+            "embeds": [{
+                "title": title,
+                "color": 5793266
+            }],
+            "allowed_mentions": { "parse": [] }
+            }
+        }
+    } else {
+        reply = {
+            "type": 4,
+            "data": {
+            "tts": false,
+            "content": "",
+            "embeds": [{
+                "title": `${body.member.user.username}#${body.member.user.discriminator}'s bots`,
+                "color": 5793266,
+                "fields": fields
+            }],
+            "allowed_mentions": { "parse": [] }
+            }
         }
     }
-
-    
 
     fetch(`https://discord.com/api/v8/interactions/${body.id}/${body.token}/callback`, {
         method: 'POST',
