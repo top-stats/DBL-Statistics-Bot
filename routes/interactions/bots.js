@@ -13,7 +13,7 @@ module.exports = async function runCommand(body){
     var fields = [];
     console.log(data)
 
-    if(data.bots.length < 1) {
+    if(!data || data.bots.length < 1) {
         const title = body.data.options
             ? 'You have no bots.'
             : 'No bots found for that user.'
@@ -41,7 +41,6 @@ module.exports = async function runCommand(body){
                 Shards: ${element.shard_count} (#${element.shard_count_rank})`
             }
         });
-    
 
         reply = {
             "type": 4,
