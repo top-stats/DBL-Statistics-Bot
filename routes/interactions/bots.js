@@ -13,8 +13,8 @@ module.exports = async function runCommand(body){
     var fields = [];
     console.log(data)
 
-    if(!data || data.bots.length < 1) {
-        const title = body.data.options
+    if(!data) {
+        const title = !body.data.options
             ? 'You have no bots.'
             : 'No bots found for that user.'
 
