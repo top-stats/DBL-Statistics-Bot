@@ -6,6 +6,8 @@ module.exports = async function runCommand(body){
 
     var reply = {};
 
+    console.log(body.data)
+
     if(!body.data.options)
     {
         reply = {
