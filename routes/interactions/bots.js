@@ -11,7 +11,6 @@ module.exports = async function runCommand(body){
         : await DBLStatsClient.getUsersBots(body.member.user.id).catch(_ => {});
 
     var fields = [];
-    console.log(data)
 
     if(!data) {
         const title = !body.data.options
@@ -42,13 +41,20 @@ module.exports = async function runCommand(body){
             }
         });
 
+        let title = ''
+        if(!body.data.options) {
+            title = `${body.member.user.username}#${body.member.user.discriminator}'s bots`
+        } else {
+            title = `${data?.user?.tag ? data?.user?.tag + '\'s' : 'Unknown user\'s'} bots`,
+        }
+
         reply = {
             "type": 4,
             "data": {
             "tts": false,
             "content": "",
             "embeds": [{
-                "title": `${data?.user?.tag ? data?.user?.tag + '\'s' : 'Unknown user\'s'} bots`,
+                "title": title,
                 "color": 5793266,
                 "fields": fields
             }],
