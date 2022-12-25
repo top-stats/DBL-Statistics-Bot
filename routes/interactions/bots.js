@@ -50,7 +50,7 @@ module.exports = async function runCommand(body){
         "tts": false,
         "content": "",
         "embeds": [{
-            "title": `${data.user.username}#${data.user.discriminator}'s bots`,
+            "title": `${body.data.user.username}#${body.data.user.discriminator}'s bots`,
             "color": 5793266,
             "fields": fields
         }],
