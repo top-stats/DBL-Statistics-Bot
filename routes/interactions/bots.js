@@ -23,6 +23,8 @@ module.exports = async function runCommand(body){
         }
     });
 
+    console.log(data)
+
     if(data.bots.length < 1) {
         const title = body.data.options
             ? 'You have no bots.'
