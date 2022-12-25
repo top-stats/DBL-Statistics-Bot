@@ -48,7 +48,7 @@ module.exports = async function runCommand(body){
             "tts": false,
             "content": "",
             "embeds": [{
-                "title": `${data?.user?.tag + '\'s' || 'Unknown user\'s'} bots`,
+                "title": `${data?.user?.tag ? data?.user?.tag + '\'s' : 'Unknown user\'s'} bots`,
                 "color": 5793266,
                 "fields": fields
             }],
