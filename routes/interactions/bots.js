@@ -11,18 +11,6 @@ module.exports = async function runCommand(body){
         : await DBLStatsClient.getUsersBots(body.member.user.id).catch(_ => {});
 
     var fields = [];
-
-    data.bots.forEach(element => {
-        fields[fields.length] = {
-            "name": element.name,
-            "value": `[View Here](https://dblstats.com/bot/${element.id})
-            Monthly Votes: ${element.monthly_votes} (#${element.monthly_votes_rank})
-            Total Votes: ${element.total_votes} (#${element.total_votes_rank})
-            Servers: ${element.server_count} (#${element.server_count_rank})
-            Shards: ${element.shard_count} (#${element.shard_count_rank})`
-        }
-    });
-
     console.log(data)
 
     if(data.bots.length < 1) {
@@ -43,6 +31,18 @@ module.exports = async function runCommand(body){
             }
         }
     } else {
+        data.bots.forEach(element => {
+            fields[fields.length] = {
+                "name": element.name,
+                "value": `[View Here](https://dblstats.com/bot/${element.id})
+                Monthly Votes: ${element.monthly_votes} (#${element.monthly_votes_rank})
+                Total Votes: ${element.total_votes} (#${element.total_votes_rank})
+                Servers: ${element.server_count} (#${element.server_count_rank})
+                Shards: ${element.shard_count} (#${element.shard_count_rank})`
+            }
+        });
+    
+
         reply = {
             "type": 4,
             "data": {
