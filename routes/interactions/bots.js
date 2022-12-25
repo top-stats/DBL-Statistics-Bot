@@ -19,6 +19,14 @@ module.exports = async function runCommand(body){
                 "allowed_mentions": { "parse": [] }
             }
         }
+        return fetch(`https://discord.com/api/v8/interactions/${body.id}/${body.token}/callback`, {
+            method: 'POST',
+            body: JSON.stringify(reply),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => console.log("/bots: Request handled."));
     }
 
     const data = await DBLStatsClient.getUsersBots(body.data.options[0].value).catch(_ => {});
