@@ -11,7 +11,7 @@ module.exports = async function runCommand(body){
         : await DBLStatsClient.getUsersBots(body.member.user.id).catch(_ => {});
 
     var fields = [];
-    console.log(data.bots[0])
+    console.log(data)
 
     if(!data || data.bots.length < 1) {
         const title = body.data.options
