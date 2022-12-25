@@ -31,7 +31,7 @@ module.exports = async function runCommand(body){
         .then(response => console.log("/bots: Request handled."));
     }
 
-    const data = await DBLStatsClient.getUsersBots(body.data.options[0].value).catch(_ => {});
+    const data = body.data.options ? await DBLStatsClient.getUsersBots(body.data.options[0].value).catch(_ => {}) : await DBLStatsClient.getUsersBots(body.member.id).catch(_ => {});
 
     var fields = [];
 
