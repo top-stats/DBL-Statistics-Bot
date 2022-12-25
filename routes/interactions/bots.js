@@ -8,30 +8,9 @@ module.exports = async function runCommand(body){
 
     console.log(body.data)
 
-    if(!body.data.options)
-    {
-        reply = {
-            "type": 4,
-            "data": {
-                "tts": false,
-                "content": "",
-                "embeds": [{
-                    "title": "Please give a Bot ID"
-                }],
-                "allowed_mentions": { "parse": [] }
-            }
-        }
-        return fetch(`https://discord.com/api/v8/interactions/${body.id}/${body.token}/callback`, {
-            method: 'POST',
-            body: JSON.stringify(reply),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => console.log("/bots: Request handled."));
-    }
-
-    const data = body.data.options ? await DBLStatsClient.getUsersBots(body.data.options[0].value).catch(_ => {}) : await DBLStatsClient.getUsersBots(body.member.id).catch(_ => {});
+    const data = body.data.options 
+        ? await DBLStatsClient.getUsersBots(body.data.options[0].value).catch(_ => {}) 
+        : await DBLStatsClient.getUsersBots(body.member.id).catch(_ => {});
 
     var fields = [];
 
