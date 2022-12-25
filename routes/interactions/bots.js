@@ -45,7 +45,7 @@ module.exports = async function runCommand(body){
         if(!body.data.options) {
             title = `${body.member.user.username}#${body.member.user.discriminator}'s bots`
         } else {
-            title = `${data?.user?.tag ? data?.user?.tag + '\'s' : 'Unknown user\'s'} bots`,
+            title = `${data?.user?.tag ? data?.user?.tag + '\'s' : 'Unknown user\'s'} bots`
         }
 
         reply = {
