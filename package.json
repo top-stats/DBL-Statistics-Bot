@@ -1,0 +1,27 @@
+{
+  "name": "topstats-bot",
+  "version": "0.0.0",
+  "description": "TopStats discord bot",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npx tsx src/index.ts",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/top-stats/bot.git"
+  },
+  "author": "TopStats Development Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/top-stats/bot/issues"
+  },
+  "homepage": "https://github.com/top-stats/bot#readme",
+  "dependencies": {
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug bot",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npx tsx src/index.ts"
+    }
+  ]
+}
