@@ -2,8 +2,9 @@
 import { config } from 'dotenv'
 config()
 // Imports
-import { Client, GatewayIntentBits } from 'discord.js'
+import { Client, Collection, Events, GatewayIntentBits } from 'discord.js'
 import events from './events';
+import commandHandler from './commands'
 
 const application = new Client({
   intents: [
@@ -11,6 +12,9 @@ const application = new Client({
   ]
 })
 
-application.on('ready', events.ready)
+commandHandler.init()
+
+application.on(Events.ClientReady, events.ready)
+application.on(Events.InteractionCreate, events.interactionCreate)
 
 application.login(process.env.DISCORD_TOKEN)

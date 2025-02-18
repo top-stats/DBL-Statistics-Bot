@@ -5,6 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "npx tsx src/index.ts",
+    "deploy-commands-dev": "npx tsx scripts/deploy-commands-dev",
     "test": "npm test"
   },
   "repository": {
